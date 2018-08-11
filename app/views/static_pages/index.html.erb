@@ -1,4 +1,3 @@
-<h1> Welcome to our shop </h1>
 
 <h2> Featured items </h2>
     <% @items.each do |item|  %>
@@ -13,21 +12,24 @@
         </ul>
     <% end %>
 
-<h2> Featured categories </h2>
-    <% @categories.each do |category|  %>
-        <ul>
-            <li><%= link_to category.name, category_path(category) %></li>
-        </ul>
-    <% end %>
+
 
 <h2> You can't find what you want? Fill out the form to ask your personnal shopper to buy an item on demand </h2>
-
 <%= form_for(@item) do |f| %>
-    Name:<br>
+    <br>Name:<br>
     <%= f.text_field :name %><br>
-    Color:<br>
+    <br>Brand:<br>
+    <% @brands.each do |brand|  %>
+        <%= f.check_box :brand %> <%= brand.name %> <br>
+    <% end %>
+    <br>Category:<br>
+    <% @categories.each do |category|  %>
+        <%= f.check_box :category %> <%= category.name %> <br>
+    <% end %>
+    <br>Color:<br>
     <%= f.text_field :color %><br>
-    Description:<br>
+    <br>Description:<br>
     <%= f.text_area :description %><br>
+    <%= f.submit %>
 <% end %>
  

@@ -7,10 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 category_list = [
+    "New Arrivals",
+    "Designers",
     "Handbags",
-    "Small leather goods",
-    "Belts",
-    "Shoes"
+    "Accessories",
+    "Jewelery"
 ]
 
 brand_list = [

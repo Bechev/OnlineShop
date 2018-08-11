@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OnlineShop</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <h1> Welcome to your personnal shopper portal! </h1>
+  <h2> Featured categories </h2>
+      <% @categories.each do |category|  %>
+          <ul>
+              <li><%= link_to category.name, category_path(category) %></li>
+          </ul>
+      <% end %>
   </head>
 
   <body>
