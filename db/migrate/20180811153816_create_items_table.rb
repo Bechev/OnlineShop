@@ -8,7 +8,7 @@ class CreateItemsTable < ActiveRecord::Migration[5.2]
       t.float :length
       t.string :description
       t.integer :price
-      t.boolean :status
+      t.boolean :sold, default: :false 
       t.integer :category_id
       t.integer :brand_id
     end

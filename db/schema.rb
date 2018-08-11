@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2018_08_11_153942) do
     t.float "length"
     t.string "description"
     t.integer "price"
-    t.boolean "status"
+    t.boolean "sold", default: true
     t.integer "category_id"
     t.integer "brand_id"
   end
