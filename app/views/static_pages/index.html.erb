@@ -1,1 +1,14 @@
 <h1> Welcome to our shop </h1>
+
+<h2> Featured items </h2>
+    <% @items.each do |item|  %>
+        <ul>
+            <li><a href="#"><%= item.name %></a></li>
+        </ul>
+    <% end %>
+<h2> Features brands </h2>
+    <% @brands.each do |brand|  %>
+        <ul>
+            <li><a href="#"><%= brand.name %></a></li>
+        </ul>
+    <% end %>
