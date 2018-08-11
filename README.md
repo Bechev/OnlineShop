@@ -3,6 +3,7 @@ This app is an online shop based on brands
 1.1 - The app allows to look for items by brands
 1.2 - Each brands have multiple items
 1.3 - Each item has :
+    - a name
     - a category
     - a color
     - a height
