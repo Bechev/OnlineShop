@@ -15,3 +15,5 @@ This app is an online shop based on brands
 1.4 - An item belongs to a category and belongs to a brand
 1.5 - Each brands have multiple categories through the items
 1.6 - Each category have multiple brands through the items
+
+
