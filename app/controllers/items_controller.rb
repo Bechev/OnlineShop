@@ -2,7 +2,8 @@ class ItemsController < ApplicationController
 
     def create
         @item = Item.create(item_params)
-        redirect_to item_path(@item)
+        @brand = Brand.find(params[:brand_id])
+        redirect_to brand_item_path(@brand,@item)
     end
 
     def show
