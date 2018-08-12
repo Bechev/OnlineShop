@@ -1,2 +1,7 @@
-<h1><%= @item.name %></h1>
+<h1><%= @brand.name %></h1>
 
+<% @brand.items.each do |item| %>
+    <ul>
+        <li><%= link_to item.name, item_path(item) %></li>
+    </ul>
+<% end %>

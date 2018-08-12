@@ -1,2 +1,11 @@
 <h1><%= @item.name %></h1>
 
+<h3>Color: </h3>
+<%= @item.color %><br>
+
+<h3>Description: </h3>
+<%= @item.description %><br>
+
+<h3>Available: </h3>
+<%= @item.sold ? "Out of stock" : "In stock" %><br>
+
