@@ -1,10 +1,13 @@
 
 <h2> Featured items </h2>
+    
+
     <% @items.each do |item|  %>
         <ul>
             <li><%= link_to item.name, item_path(item) %></li>
         </ul>
     <% end %>
+
 <h2> Featured brands </h2>
     <% @brands.each do |brand|  %>
         <ul>
@@ -12,20 +15,14 @@
         </ul>
     <% end %>
 
-
-
 <h2> You can't find what you want? Fill out the form to ask your personnal shopper to buy an item on demand </h2>
 <%= form_for(@item) do |f| %>
     <br>Name:<br>
     <%= f.text_field :name %><br>
     <br>Brand:<br>
-    <% @brands.each do |brand|  %>
-        <%= f.check_box :brand %> <%= brand.name %> <br>
-    <% end %>
+    <%= f.text_field :brand_name %><br>
     <br>Category:<br>
-    <% @categories.each do |category|  %>
-        <%= f.check_box :category %> <%= category.name %> <br>
-    <% end %>
+    <%= f.text_field :category_name %><br>
     <br>Color:<br>
     <%= f.text_field :color %><br>
     <br>Description:<br>

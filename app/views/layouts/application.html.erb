@@ -3,7 +3,7 @@
   <head>
   <h1> Welcome to your personnal shopper portal! </h1>
   <h2> Featured categories </h2>
-      <% @categories.each do |category|  %>
+      <% Category.all.each do |category|  %>
           <ul>
               <li><%= link_to category.name, category_path(category) %></li>
           </ul>

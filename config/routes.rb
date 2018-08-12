@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :brands
   resources :items
+
   
   root 'static_pages#index'
 end
