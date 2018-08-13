@@ -8,15 +8,5 @@
 
 <h2> You can't find what you want? Fill out the form to ask your personnal shopper to buy an item on demand </h2>
 <%= form_for([@brand, @item]) do |f| %>
-    <br>Name:<br>
-    <%= f.text_field :name %><br>
-    <br>Brand:<br>
-    <%= f.text_field :brand_name %><br>
-    <br>Category:<br>
-    <%= f.text_field :category_name %><br>
-    <br>Color:<br>
-    <%= f.text_field :color %><br>
-    <br>Description:<br>
-    <%= f.text_area :description %><br>
-    <%= f.submit %>
+    <%= render :partial => "items/new_item_form", locals: {f: f} %>
 <% end %>
