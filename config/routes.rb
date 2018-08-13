@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  
-  resources :brands do 
+  resources :brands, only: [:show] do 
     resources :items
   end
 
-  resources :categories do
+  resources :categories, only: [:show] do
     resources :items
   end
   
-  # resources :items
+  resources :users, only: [:new,:create]
 
   
   root 'static_pages#index'
