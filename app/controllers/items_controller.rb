@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+    before_action :authentification_required
 
     def create
         @item = Item.create(item_params)

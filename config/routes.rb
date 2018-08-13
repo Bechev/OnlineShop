@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   end
   
   resources :users, only: [:new,:create]
-
+  get '/login', to: "sessions#new"
+  post '/sessions', to: "sessions#create"
+  get '/logout', to: "sessions#destroy"
   
   root 'static_pages#index'
 end

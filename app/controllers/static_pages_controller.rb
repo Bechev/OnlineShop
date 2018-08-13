@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+  before_action :authentification_required
     def index
         @categories = Category.all
         @brands = Brand.all
