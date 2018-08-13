@@ -15,5 +15,7 @@ This app is an online shop based on brands
 1.4 - An item belongs to a category and belongs to a brand
 1.5 - Each brands have multiple categories through the items
 1.6 - Each category have multiple brands through the items
+2.1 - A user can create a profile or login through FB
+2.2 - A user can edit/delete a request he made
 
 
