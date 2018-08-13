@@ -8,5 +8,5 @@
 
 <h2> You can't find what you want? Fill out the form to ask your personnal shopper to buy an item on demand </h2>
 <%= form_for([@category, @item]) do |f| %>
-    <%= render :partial => "items/new_item_form", locals: {f: f} %>
+    <%= render "items/new_item_form",f: f %>
 <% end %>
