@@ -20,5 +20,3 @@ This app is an online shop based on brands
 
 
 
-
-NEed to add back: <p>You are logged in as <%= current_user.email %></p> on footerlayout when disabled for login and signup pages
