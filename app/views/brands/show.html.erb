@@ -6,6 +6,8 @@
     </ul>
 <% end %>
 
+<%= link_to "New Item", new_brand_item_path(@brand) %>
+
 <h2> You can't find what you want? Fill out the form to ask your personnal shopper to buy an item on demand </h2>
 <%= form_for([@brand, @item]) do |f| %>
     <%= render "items/new_item_form",f: f %>

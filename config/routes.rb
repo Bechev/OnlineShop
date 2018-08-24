@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new,:create]
   get '/login', to: "sessions#new"
   post '/sessions', to: "sessions#create"
+  post '/brands/:id/items/new', to: "items#create"
   get '/logout', to: "sessions#destroy"
   get '/auth/facebook/callback' => 'sessions#create'
   

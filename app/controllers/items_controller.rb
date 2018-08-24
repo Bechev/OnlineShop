@@ -20,6 +20,11 @@ class ItemsController < ApplicationController
         @items = Item.sold
     end
 
+    def new
+        @brand = Brand.find(params[:brand_id])
+        @item = Item.new(brand_id: params[:brand_id])
+    end
+
 private 
     def item_params
         params.require(:item).permit(:name, :category_name, :brand_name, :color, :description)
