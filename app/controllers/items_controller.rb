@@ -16,6 +16,9 @@ class ItemsController < ApplicationController
         @item = Item.find(params[:id])
     end
 
+    def sold
+        @items = Item.sold
+    end
 
 private 
     def item_params

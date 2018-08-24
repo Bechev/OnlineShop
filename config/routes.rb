@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :categories, only: [:show] do
     resources :items
   end
+
+  get '/items/sold', to: "items#sold"
   
   resources :users, only: [:new,:create]
   get '/login', to: "sessions#new"

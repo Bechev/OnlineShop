@@ -17,4 +17,9 @@ class Item < ApplicationRecord
     def brand_name
         self.brand ? self.brand.name : nil
     end
+
+    def self.sold
+        where(sold:true)
+    end
+
 end
