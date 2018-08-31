@@ -1,11 +1,20 @@
+function Item(attributes){
+    this.name = attributes.name;
+    this.id = attributes.id;
+}
 
 $(function(){
-    var brandURL = $("#brand_items")[0].baseURI; //Need to do that only when the script is loaded
+    var brandURL = $("#brand_items")[0].baseURI;
     
-    function Item(attributes){
-        this.name = attributes.name;
-        this.id = attributes.id;
-    }
+    $("#brand_items").on('submit', function(e){
+        e.preventDefault();
+        $("#brandItemsHook").empty();
+        $.get(brandURL + "/list", function(json){
+            var item = new Item(json);
+            var renderedItem = item.renderItem(json); 
+            $("#brandItemsHook").append(renderedItem)
+        });
+    });
     
     Item.prototype.renderItem = function(json){
         var html = "<ul>";
@@ -18,15 +27,5 @@ $(function(){
         html += "</ul>"
         return html
     }
-
-    $("#brand_items").on('submit', function(e){
-        e.preventDefault();
-        $("#brandItemsHook").empty();
-        $.get(brandURL + "/list", function(json){
-            var item = new Item(json);
-            var renderedItem = item.renderItem(json); 
-            $("#brandItemsHook").append(renderedItem)
-        });
-    });
 
 })
