@@ -6,15 +6,12 @@
     </ul>
 <% end %>
 
+<%= link_to "Buy an unlisted item", new_category_item_path(@category) %>
+
 <%= form_tag("/items/sold", method: :get, id: "sold_items") do %>
     <%= submit_tag("See sold items") %>
 <% end %>
 
-<div class="categories_items"></div>
-
-<h2> You can't find what you want? Fill out the form to ask your personnal shopper to buy an item on demand </h2>
-<%= form_for([@category, @item]) do |f| %>
-    <%= render "items/new_item_form",f: f %>
-<% end %>
+<div id="soldItemsHook"></div>
 
 <script src="/assets/soldItems.js"></script>

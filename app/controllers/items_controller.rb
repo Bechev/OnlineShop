@@ -18,10 +18,15 @@ class ItemsController < ApplicationController
 
     def sold
         @items = Item.sold
+        render json: @items, status: 201
     end
 
     def new
-        @brand = Brand.find(params[:brand_id])
+        if(params[:brand_id])
+            @brand = Brand.find(params[:brand_id])
+        else
+            @category = Category.find(params[:category_id])
+        end
         @item = Item.new(brand_id: params[:brand_id])
     end
 
