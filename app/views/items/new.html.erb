@@ -1,11 +1,15 @@
 <h2> You can't find what you want? Fill out the form to ask your personnal shopper to buy an item on demand </h2>
 
 <% if(@brand) %>
-    <%= form_for([@brand, @item]) do |f| %>
+    <%= form_for([@brand, @item], html: {class: :new_item_form, id: :new_item_by_brand }) do |f| %>
         <%= render "items/new_item_form",f: f %>
     <% end %>
 <% else %>
-    <%= form_for([@category, @item]) do |f| %>
+    <%= form_for([@category, @item], html: {class: :new_item_form, id: :new_item_by_category }) do |f| %>
         <%= render "items/new_item_form",f: f %>
     <% end %>
 <% end %>
+
+
+<div id= new_item_hook></div>
+

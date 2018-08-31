@@ -1,6 +1,6 @@
 
 $(function(){
-    var brandURL = $("#brand_items")[0].baseURI;
+    var brandURL = $("#brand_items")[0].baseURI; //Need to do that only when the script is loaded
     
     function Item(attributes){
         this.name = attributes.name;

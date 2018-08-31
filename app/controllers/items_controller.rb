@@ -9,7 +9,9 @@ class ItemsController < ApplicationController
         else 
             @brand = Brand.create(name: params[:brand_name])
         end
-        redirect_to brand_item_path(@brand,@item)
+
+        render json: @item, status: 201
+
     end
 
     def show
