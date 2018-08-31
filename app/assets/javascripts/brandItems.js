@@ -2,12 +2,15 @@ $(function(){
     $("#brand_items").on('submit', function(e){
         e.preventDefault();
         var html = "<ul>";
-        var id = this.baseURI;
+        var brandURL = this.baseURI;
         $("#brandItemsHook").empty();
-        $.get(id + "/list", function(jsonObjects){
+        $.get(brandURL + "/list", function(jsonObjects){
+            console.log(jsonObjects)
             $.each(jsonObjects, function(index, item){
+                itemName =item.name
+                itemNameWithAppendedLink = itemName.link(brandURL + "/items/" + item.id)
                 html += "<li>"
-                html += item.name + "</li>"    
+                html += itemNameWithAppendedLink + "</li>"    
             })
             html += "</ul>"
             $("#brandItemsHook").append(html)
