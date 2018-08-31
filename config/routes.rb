@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   end
 
   get '/items/sold', to: "items#sold"
-  
+  get '/brands/:id/list', to: "brands#list"
+
   resources :users, only: [:new,:create]
   get '/login', to: "sessions#new"
   post '/sessions', to: "sessions#create"

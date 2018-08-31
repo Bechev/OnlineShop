@@ -1,9 +1,17 @@
 <h1><%= @brand.name %></h1>
 
+<%= form_tag("/brands/:brand_id/items", method: :get, id: "brand_items") do %>
+    <%= submit_tag("See " + @brand.name + " items") %>
+<% end %>
+
+<div id="brandItemsHook"></div>
+
 <% @brand.items.each do |item| %>
     <ul>
         <li><%= link_to item.name, [@brand, item] %></li>
     </ul>
 <% end %>
+
+
 
 <%= link_to "Buy an unlisted item", new_brand_item_path(@brand) %>

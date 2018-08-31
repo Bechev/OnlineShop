@@ -1,5 +1,4 @@
 $(function(){
-    console.log("test")
     $("#sold_items").on('submit', function(e){
         e.preventDefault();
         var html = "<ul>";
