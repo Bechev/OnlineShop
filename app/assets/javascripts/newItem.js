@@ -9,9 +9,9 @@ function Item(attributes){
 $(function(){
     $(".new_item_form").on('submit', function(e){
         e.preventDefault();
-        var $form = $(this);
-        var action = $form.attr("action");
-        var params = $form.serialize();
+        let $form = $(this);
+        let action = $form.attr("action");
+        let params = $form.serialize();
         $.post(action,params)
         .done(function(json){
                 newItem = new Item(json);

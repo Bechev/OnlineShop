@@ -1,7 +1,7 @@
 $(function(){
     $("#sold_items").on('submit', function(e){
         e.preventDefault();
-        var html = "<ul>";
+        let html = "<ul>";
         $("#soldItemsHook").empty();
         $.get('/items/sold', function(jsonObjects){
             $.each(jsonObjects, function(index,item){
