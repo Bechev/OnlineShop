@@ -6,12 +6,5 @@
 
 <div id="brandItemsHook"></div>
 
-<% @brand.items.each do |item| %>
-    <ul>
-        <li><%= link_to item.name, [@brand, item] %></li>
-    </ul>
-<% end %>
-
-
 
 <%= link_to "Buy an unlisted item", new_brand_item_path(@brand) %>

@@ -1,19 +1,32 @@
+
 $(function(){
+    var brandURL = $("#brand_items")[0].baseURI;
+    
+    function Item(attributes){
+        this.name = attributes.name;
+        this.id = attributes.id;
+    }
+    
+    Item.prototype.renderItem = function(json){
+        var html = "<ul>";
+        $.each(json, function(index, item){
+            itemName = this.name
+            itemNameWithAppendedLink = itemName.link(brandURL + "/items/" + this.id)
+            html += "<li>"
+            html += itemNameWithAppendedLink + "</li>"    
+        })
+        html += "</ul>"
+        return html
+    }
+
     $("#brand_items").on('submit', function(e){
         e.preventDefault();
-        var html = "<ul>";
-        var brandURL = this.baseURI;
         $("#brandItemsHook").empty();
-        $.get(brandURL + "/list", function(jsonObjects){
-            console.log(jsonObjects)
-            $.each(jsonObjects, function(index, item){
-                itemName =item.name
-                itemNameWithAppendedLink = itemName.link(brandURL + "/items/" + item.id)
-                html += "<li>"
-                html += itemNameWithAppendedLink + "</li>"    
-            })
-            html += "</ul>"
-            $("#brandItemsHook").append(html)
+        $.get(brandURL + "/list", function(json){
+            var item = new Item(json);
+            var renderedItem = item.renderItem(json); 
+            $("#brandItemsHook").append(renderedItem)
         });
     });
+
 })
