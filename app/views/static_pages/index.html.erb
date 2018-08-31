@@ -6,3 +6,10 @@
             <li><%= link_to brand.name, brand_path(brand) %></li>
         </ul>
     <% end %>
+
+
+<%= form_tag("/items/sold", method: :get, id: "sold_items") do %>
+    <%= submit_tag("See sold items") %>
+<% end %>
+
+<div id="soldItemsHook"></div>

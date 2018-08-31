@@ -6,12 +6,6 @@
     </ul>
 <% end %>
 
+<p>
 <%= link_to "Buy an unlisted item", new_category_item_path(@category) %>
-
-<%= form_tag("/items/sold", method: :get, id: "sold_items") do %>
-    <%= submit_tag("See sold items") %>
-<% end %>
-
-<div id="soldItemsHook"></div>
-
-<script src="/assets/soldItems.js"></script>
+</p>

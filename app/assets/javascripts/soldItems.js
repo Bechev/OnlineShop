@@ -1,8 +1,9 @@
 $(function(){
+    console.log("test")
     $("#sold_items").on('submit', function(e){
-        var html = "<ul>";
         e.preventDefault();
-        $("#soldItems").empty();
+        var html = "<ul>";
+        $("#soldItemsHook").empty();
         $.get('/items/sold', function(jsonObjects){
             $.each(jsonObjects, function(index,item){
                 html += "<li>"
