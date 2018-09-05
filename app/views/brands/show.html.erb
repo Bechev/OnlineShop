@@ -1,6 +1,6 @@
 <h1><%= @brand.name %></h1>
 
-<%= form_tag("/brands/:brand_id/items", method: :get, id: "brand_items") do %>
+<%= form_tag("/brands/#{@brand.id}", method: :get, id: "brand_items") do %>
     <%= submit_tag("See " + @brand.name + " items") %>
 <% end %>
 

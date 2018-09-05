@@ -12,7 +12,7 @@ $(function(){
         let $form = $(this);
         let action = $form.attr("action");
         let params = $form.serialize();
-        $.post(action,params)
+        $.post(action, params)
         .done(function(json){
                 newItem = new Item(json);
                 renderHTMLForNewItem = newItem.renderHTML();
