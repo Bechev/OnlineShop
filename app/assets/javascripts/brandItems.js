@@ -10,7 +10,9 @@ $(function(){
         let html = "<li>" + this.name + "</li>"
         return html
     }
-    
+})
+
+$(function(){
     $("#brand_items").on('submit', function(e){
         brandURL = $(".brand_items").action
         e.preventDefault();
@@ -28,4 +30,4 @@ $(function(){
         $("#brandItemsHook").append("</ul>")
     });
 
-})
+    })
